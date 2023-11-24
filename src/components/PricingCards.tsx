@@ -1,7 +1,8 @@
 import { CheckIcon } from "lucide-react";
 import Link from "next/link";
 import CheckoutButton from "./CheckoutButton";
-
+// Aqui voce pode fazer isso diretamente no Stripe, mas para testes
+// está chumbado direto.
 const tiers = [
   {
     title: 'Starter',
@@ -19,7 +20,7 @@ const tiers = [
   },
   {
     title: 'Pro',
-    id: "si_OnlcsLNQYbMVzV",
+    id: "pro",
     href: '#',
     priceMonthly: '$5.99',
     description: 'Unlock the Full Potential with Pro!',
