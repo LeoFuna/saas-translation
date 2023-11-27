@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 
 export default function UpgradeBanner() {
   const subscription = useSubscriptionStore((state) => state.subscription);
-  const isPro = subscription?.role === 'pro';
+  const isPro = subscription?.status === 'active';
   const router = useRouter();
 
   if (subscription === undefined || isPro) return null;

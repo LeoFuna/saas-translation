@@ -8,13 +8,13 @@ import LoadingSpinner from "./LoadingSpinner";
 import { useSubscriptionStore } from "../../store/store";
 import ManageAccountButton from "./ManageAccountButton";
 
-export default function CheckoutButton() {
+export default function CheckoutButton({ generatePortalLink }: { generatePortalLink: () => Promise<void> }) {
   const { data: session } = useSession()
   const [loading, setLoading] = useState(false);
   const subscription = useSubscriptionStore((state) => state.subscription);
 
   const isLoadingSubscription = subscription === undefined;
-  const isSubscribed = subscription?.role === 'pro' && subscription.status === 'active';
+  const isSubscribed = subscription?.status === 'active';
 
   const createCheckoutSession = async () => {
     if (!session?.user.id) return;
@@ -53,7 +53,7 @@ export default function CheckoutButton() {
         focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer disabled:opacity-80
         disabled:bg-indigo-600/50 disabled:text-white disabled:cursor-default"
       >
-        { isSubscribed ? <ManageAccountButton /> :
+        { isSubscribed ? <ManageAccountButton onSubmit={generatePortalLink} /> :
         isLoadingSubscription || loading ?
         <LoadingSpinner /> :
         <button onClick={() => createCheckoutSession()}>
