@@ -17,8 +17,15 @@ import LoadingSpinner from "./LoadingSpinner";
 import { StarIcon } from "lucide-react";
 import ManageAccountButton from "./ManageAccountButton";
 
+type UserButtonProps = {
+  session: Session | null;
+  generatePortalLink: () => Promise<void>;
+};
 
-export default function UserButton({ session }: { session: Session | null}) {
+export default function UserButton({
+  session,
+  generatePortalLink,
+}: UserButtonProps) {
   const subscription = useSubscriptionStore((state) => state.subscription);
 
   if (!session) return (
@@ -53,7 +60,7 @@ export default function UserButton({ session }: { session: Session | null}) {
               <p>PRO</p>
             </DropdownMenuLabel>
             <DropdownMenuItem>
-              <ManageAccountButton />
+              <ManageAccountButton onSubmit={generatePortalLink}  />
             </DropdownMenuItem>
           </>
         )}

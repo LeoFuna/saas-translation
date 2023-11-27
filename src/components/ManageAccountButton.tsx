@@ -1,7 +1,7 @@
-import { generatePortalLink } from "../../actions/generatePortalLink";
-
-export default function ManageAccountButton() {
-  return <form action={generatePortalLink}>
+export default function ManageAccountButton({
+  onSubmit
+}: { onSubmit: () => Promise<void> }) {
+  return <form action={onSubmit}>
     <button
       type="submit"
     >

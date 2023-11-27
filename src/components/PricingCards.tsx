@@ -1,6 +1,7 @@
 import { CheckIcon } from "lucide-react";
 import Link from "next/link";
 import CheckoutButton from "./CheckoutButton";
+import { generatePortalLink } from "../../actions/generatePortalLink";
 // Aqui voce pode fazer isso diretamente no Stripe, mas para testes
 // está chumbado direto.
 const tiers = [
@@ -94,7 +95,7 @@ export default function PricingCards({ redirect }: { redirect?: boolean }) {
                   Get Started Today
                 </Link>
               ) : (
-                tier.id !== "started_id" && <CheckoutButton />
+                tier.id !== "started_id" && <CheckoutButton generatePortalLink={generatePortalLink} />
               ) }
             </div>
           ))
