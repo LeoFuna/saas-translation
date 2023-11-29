@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import UserAvatar from "./UserAvatar";
 import { useSession } from "next-auth/react";
+import { useLanguageStore } from "../../store/store";
 
 export default function ChatListRow({ chatId }: { chatId: string }) {
   const router = useRouter();
@@ -12,6 +13,7 @@ export default function ChatListRow({ chatId }: { chatId: string }) {
   const [messages, loading, error] = useCollectionData<Message>(
     limitedSortedMessagesRef(chatId)
   )
+  const [language] = useLanguageStore(state => [state.language])
 
   function prettyUUID(n = 4) {
     return chatId.substring(0, n);
@@ -36,7 +38,7 @@ export default function ChatListRow({ chatId }: { chatId: string }) {
         </p>
 
         <p className="text-gray-400 line-clamp-1">
-          { message?.translated?.['en'] || 'Get the conversation started...'}
+          { message?.translated?.[language] || 'Get the conversation started...'}
         </p>
       </div>
 

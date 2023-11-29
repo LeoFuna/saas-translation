@@ -8,6 +8,7 @@ import { MessagesSquareIcon } from "lucide-react";
 import CreateChatButton from "./CreateChatButton";
 import UpgradeBanner from "./UpgradeBanner";
 import { generatePortalLink } from "../../actions/generatePortalLink";
+import LanguageSelect from "./LanguageSelect";
 
 export default async function Header() {
   const session = await getServerSession(authOptions);
@@ -19,6 +20,8 @@ export default async function Header() {
         <Logo />
 
         <div className="flex-1 flex items-center justify-end space-x-4">
+          <LanguageSelect />
+
           {session ? 
             (<>
               <Link
