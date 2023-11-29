@@ -26,6 +26,31 @@ export const LanguagesSupportedMap: Record<LanguaguesSupprted, string> = {
   zh: "Chinese",
 }
 
+interface LanguageState {
+  language: LanguaguesSupprted;
+  setLanguage: (language: LanguaguesSupprted) => void;
+  getLanguage: (isPro: boolean) => LanguaguesSupprted[];
+  getNotSupportedLanguages: (isPro: boolean) => LanguaguesSupprted[];
+}
+
+export const useLanguageStore = create<LanguageState>((set, get) => ({
+  language: 'en',
+  setLanguage: (language: LanguaguesSupprted) => set({ language }),
+  getLanguage: (isPro: boolean) => {
+    if (isPro) return Object.keys(LanguagesSupportedMap) as LanguaguesSupprted[];
+    return Object.keys(LanguagesSupportedMap).slice(
+      0,
+      2
+    ) as LanguaguesSupprted[];
+  },
+  getNotSupportedLanguages: (isPro: boolean) => {
+    if (isPro) return [];
+    return Object.keys(LanguagesSupportedMap).slice(
+      2
+    ) as LanguaguesSupprted[];
+  },
+}))
+
 interface SubscriptionState {
   subscription: Subscription | null | undefined;
   setSubscription: (subscription: Subscription | null) => void;
