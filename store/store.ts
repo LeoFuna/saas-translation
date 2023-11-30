@@ -3,27 +3,17 @@ import { Subscription } from "../types/Subscription";
 
 export type LanguaguesSupprted = 
   | "en"
+  | "de"
   | "es"
   | "fr"
-  | "de"
-  | "it"
-  | "ja"
-  | "ko"
-  | "pt"
-  | "ru"
-  | "zh";
+  | "pt";
 
 export const LanguagesSupportedMap: Record<LanguaguesSupprted, string> = {
   en: "English",
   es: "Spanish",
   fr: "French",
   de: "German",
-  it: "Italian",
-  ja: "Japanese",
-  ko: "Korean",
   pt: "Portuguese",
-  ru: "Russian",
-  zh: "Chinese",
 }
 
 interface LanguageState {

@@ -21,7 +21,6 @@ export default function SubscriptionProvider({
         setSubscription(null);
         return
       } else {
-        console.log('Subscription found');
         setSubscription(snap.docs[0].data());
       }
     }, (error) => {
