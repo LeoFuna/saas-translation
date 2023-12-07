@@ -63,4 +63,8 @@ PS: Importante observar que caso queira `simular` uma conta `PRO`, basta no mome
   1 - Um número inválido como: 4242424242424 (até o máximo)
   2 - Adicionar o resto dos dados com valores válidos mas não necessitando serem reais.
 
+#### Home
+
+![image](https://github.com/LeoFuna/chat-with-anyone/assets/80538553/7cbb7b45-7081-4813-a25e-ab92ddeb2c6e)
+
 
