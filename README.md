@@ -8,6 +8,7 @@ Olá seja bem vindo(a) ao meu projeto Chat With Anyone, o projeto é um modelo S
 
 - [Versões Necessárias](#versões-necessárias)
 - [Ferramentas](#ferramentas)
+- [Aprendizados](#aprendizados)
 - [Instruções para acessar o projeto localmente](#instruções-para-acessar-o-projeto-localmente)
 - [A aplicação](#a-aplicação)
 
@@ -33,6 +34,14 @@ Olá seja bem vindo(a) ao meu projeto Chat With Anyone, o projeto é um modelo S
 - Zod
   
 ---
+
+# Aprendizados
+- Proteção de páginas com middleware no Next JS.
+- Conversores do firebase firestore (`withConverter`)
+- Dark/Light modes
+- Gerenciamento de estados com Zustand
+- `Server Actions` são usados em `Server Components`, para ser usado num `Client component` deve ser passado via props.
+- Delete recursivo no Firestore (`recursiveDelete`)
 
 ## Instruções para acessar o projeto localmente:
 
