@@ -53,13 +53,9 @@ Olá seja bem vindo(a) ao meu projeto Chat With Anyone, o projeto é um modelo S
 2. Instale as dependências:
   * `npm install`
 
-3. Caso possua o mongoDb instalado, inicie o mesmo.
-  * Caso não tenha instalado, instale-o.
-    * [Página para Instalação](https://docs.mongodb.com/manual/installation/)
+3. Crie um arquivo `.env.local` na raiz da aplicação e insira os dados baseando-se no modelo `.env.local.sample`
 
-4. Crie um arquivo `.env.local` na raiz da aplicação e insira os dados baseando-se no modelo `.env.local.sample`
-
-5. Inicie a aplicação:
+4. Inicie a aplicação:
   * `npm run dev`
 
 ---
