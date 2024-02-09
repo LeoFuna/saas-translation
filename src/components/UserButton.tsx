@@ -33,7 +33,7 @@ export default function UserButton({
       Sign In
     </Button>
   )
-  
+  const isPro = subscription?.status === 'active';
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -52,7 +52,7 @@ export default function UserButton({
           </DropdownMenuItem>
         )}
 
-        {subscription?.role === 'pro' && (
+        {isPro && (
           <>
             <DropdownMenuLabel className="text-xs flex items-center justify-center
             space-x-1 text-[#E935C1] animate-pulse">
